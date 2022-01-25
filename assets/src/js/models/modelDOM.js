@@ -9,7 +9,7 @@ class BuildProductLayout{
         this.imagem = imagem;
         this.preco = preco;
     }
-    build(){
+    buildVitrine(){
         const divProduct = document.createElement("div");
         divProduct.classList.add('products')
         const img = document.createElement("img");
