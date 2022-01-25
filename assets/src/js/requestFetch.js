@@ -4,6 +4,7 @@ class RequestProducts {
         async getProducts() {
             const response = await fetch(`https://kenzie-food-api.herokuapp.com/product`)
             const processedProducts = await response.json();
+            console.log(processedProducts)
             return processedProducts
     }
     static
