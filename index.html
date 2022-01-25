@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="./assets/images/logoKenzieFood.png" alt="logo">
+        <div id="search">
+            <input id="inputSearch" type="text" placeholder="Pesquisar por produto">
+            <button id="clickSearch"><img src="./assets/images/Lupa.png" alt="icon"></button>
+        </div>
+    </header>
+    <main>
+        <div id="filterButtons">
+            <button class="filters" id="all">Todos</button>
+            <button class="filters" id="bakery"><img class="imgFilters" src="./assets/images/pao.png" alt="icon">
+                Panificadora</button>
+            <button class="filters" id="fruits"><img class="imgFilters" src="./assets/images/fruta.png" alt="icon">
+                Frutas</button>
+            <button class="filters" id="drinks"><img class="imgFilters" src="./assets/images/bebida.png" alt="icon">
+                Bebidas</button>
+        </div>
+        <section id="showase">
+            <ol id="showcaseList">
+                <li class="bakery">
+                    <img class="imgshowase" src="./assets/images/panqueca.png" alt="panqueca">
+                    <span class="spanShowase"><img src="./assets/images/pao.png" alt="icon">Panificadora</span>
+
+                    <div class="information">
+                        <h2>Panqueca de banana com aveia</h2>
+                        <p class="description">Esta receita serve muito bem 2 pessoas,
+                            deixa a gente bem satisfeito, se não tiver outra opção de café.
+                            Se tiver mais comida, como pães e frutas.
+                        </p>
+                        <div id="priceBuy">
+                            <p class="valor">R$ 20.00</p>
+                            <button class="imgAddCart"><img src="./assets/images/addCarrinho.png"
+                                    alt="addCarrinho"></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="bakery">
+                    <img class="imgshowase" src="./assets/images/panqueca.png" alt="panqueca">
+                    <span class="spanShowase"><img src="./assets/images/pao.png" alt="icon">Panificadora</span>
+
+                    <div class="information">
+                        <h2>Panqueca de banana com aveia</h2>
+                        <p class="description">Esta receita serve muito bem 2 pessoas,
+                            deixa a gente bem satisfeito, se não tiver outra opção de café.
+                            Se tiver mais comida, como pães e frutas.
+                        </p>
+                        <p class="valor">R$ 20.00</p>
+                        <button class="imgAddCart"><img src="./assets/images/addCarrinho.png"
+                                alt="addCarrinho"></button>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section id="shoppingCart">
+            <h3 id="titleCart"><img src="./assets/images/carrinhoCarrinho.png" alt="icon"> Carrinho</h3>
+            <div class="emptyCart">
+                <img src="./assets/images/SacolaVazia.png" alt="SacolaVazia">
+                <h3>Ops!</h3>
+                <p>Por enquanto nao temos produtos no carrinho</p>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="./assets/src/js/controllers/criacaoDOMCarrinho.js"></script>
+    <script type="module" src="./assets/src/js/controllers/criacaoDOMVitrine.js"></script>
+    <script type="module" src="./assets/src/js/controllers/logicaDoCarrinho.js"></script>
+    <script type="module" src="./assets/src/js/models/modelDOM.js"></script>
+    <script type="module" src="./assets/src/js/requestFetch.js"></script>
+</body>
+
+</html>
