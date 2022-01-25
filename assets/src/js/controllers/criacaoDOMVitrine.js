@@ -9,10 +9,21 @@ class CreateShowcase{
         const allProducts = await RequestProducts.getProducts()
         allProducts.forEach(product=>{
             const builder = new BuildProductLayout(product)
-            const model = builder.build()
+            const model = builder.buildVitrine()
+            vitrine.appendChild(model)
+        })
+    }
+    static
+    async filterShowcaseSection(section){
+        const allProducts = await RequestProducts.getProducts()
+        const filteredProducts = allProducts.filter(product=>product.categoria == section)
+        filteredProducts.forEach(product=>{
+            const builder = new BuildProductLayout(product)
+            const model = builder.buildVitrine()
             vitrine.appendChild(model)
         })
     }
 }
+
 
 CreateShowcase.buildShowcase()
