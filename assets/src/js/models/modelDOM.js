@@ -12,6 +12,7 @@ class BuildProductLayout{
     buildVitrine(){
         const divProduct = document.createElement("div");
         divProduct.classList.add('products')
+        divProduct.id = this.id;
         const img = document.createElement("img");
         img.src = this.imagem
         const divSection = document.createElement("div");
