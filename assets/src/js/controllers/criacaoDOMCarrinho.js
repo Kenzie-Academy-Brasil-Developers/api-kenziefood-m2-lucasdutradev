@@ -1,15 +1,18 @@
 import { RequestProducts } from '../requestFetch.js'
 
-class ControllerCard {
+class CreateElementsCards {
 
     static
-        async createDOM() {
-        let click = [1, 2, 5] // aqui vem a captura do id do botao document.query...
-        let productsInCard = [] // aqui sera armazenado os itens que existem dentro do carrinho
+        async createDOM(clickId) {
         let data = await RequestProducts.getProducts() // aqui capturamos a data que vem do fetch
-        click.forEach((order) => productsInCard.push(data.find((product) => product.id === order)))
+        let datasOrder = await clickId
+        let productsInCard = [] // aqui sera armazenado os itens que existem dentro do carrinho
+        let pricesCard = []
+        datasOrder.forEach((order) => productsInCard.push(data.find((product) => product.id === order)))
 
         const card = document.querySelector(".card"); // box de captura
+        const priceTotal = document.createElement("p");
+        const productTotal = document.createElement("p");
 
         productsInCard.forEach((valor) => {
             const img = document.createElement("img");
@@ -19,7 +22,7 @@ class ControllerCard {
             const preco = document.createElement("p");
 
             img.src = valor.imagem;
-            
+
             categoria.innerText = valor.categoria;
             h2.innerText = valor.nome;
             p.innerText = valor.descricao;
@@ -27,16 +30,18 @@ class ControllerCard {
 
             // dar apend no box que capturar
 
-            card.appendChild(img)
-            card.appendChild(categoria)
-            card.appendChild(h2)
-            card.appendChild(p)
-            card.appendChild(preco)
+            // card.appendChild(img)
+            // card.appendChild(categoria)
+            // card.appendChild(h2)
+            // card.appendChild(p)
+            // card.appendChild(preco)
         });
-
+        priceTotal.innerText = productsInCard.reduce((acum, value) => acum + value.preco, 0)
+        productTotal.innerText = productsInCard.length
+        console.log(productsInCard)
+        console.log(priceTotal)
+        console.log(productTotal)
     }
 }
 
-ControllerCard.createDOM()
-
-export { ControllerCard }
+export { CreateElementsCards }
