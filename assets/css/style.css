@@ -53,27 +53,28 @@ header {
 }
 
 .filters {
+    color: #212529;
     height: 40px;
     border: none;
     border-radius: 25px;
+    padding-left: 15px;
     display: flex;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 13px;
     align-items: center;
-    margin-bottom: 27px;
 }
 
 #all {
     width: 72px;
-    border: 1px solid black;
-    background-color: #F8F9FA;    
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    border: 2px solid #212529;
+    background-color: #F8F9FA;
 }
 
-#products {
-    width: 148px;
-    background-color: #FFF7F4;
+#bakery{
+    width: 140px;
+    height: 40px;
+    background-color: #fff7f4
 }
 
 #fruits {
@@ -82,20 +83,14 @@ header {
 }
 
 #drinks {
-    width: 148px;
+    width: 115px;
     background-color: #F3EEF5;
 }
 
 .imgFilters {
     width: 18px;
-    margin-right: 15px;
-    margin-left: 15px;
 }
 
-.imgshowase {
-    width: 296px;
-    height: 200px;
-}
 
 .information {
     width: 296px;
@@ -112,26 +107,6 @@ header {
     font-family: 'Poppins', sans-serif;    
 }
 
-.spanShowase {
-    position: relative;
-    bottom: 20px;
-    left: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 6px 18px;
-    background: #FFE9EE;
-    border-radius: 30px;
-    width: 132px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;    
-}
-
-.spanShowase img {
-    width: 15px;
-    margin-right: 9px;
-}
 
 .description {
     font-size: 12px;
@@ -150,7 +125,6 @@ header {
 .imgAddCart img{
     width: 35px;
     margin-right: 5px;
-    
 }
 
 #priceBuy {
@@ -160,17 +134,69 @@ header {
 }
 
 #showcaseList {
-display: flex;
+    display: flex;
+    gap: 25px;
+    padding: 20px 0px 20px;
 }
 
 #showcaseList li {
-    margin-right: 26px;
+    width: 300px;
+}
+
+
+.imgshowase:not(img[alt='Panqueca de banana com aveia']) {
+    box-sizing: border-box;
+    width: 296px;
+    height: 200px;
+    border: 3px solid #FFE9EE;
+    border-radius:8px;
+}
+
+.spanShowase {
+    position: relative;
+    bottom: 20px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    height: 30px;
+    padding: 0 15px;
+    gap: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;    
+    font-weight: 550;
+    background-color: #FFE4EA;
+}
+
+.Panificadora{
+    width: 120px;
+}
+
+.Frutas{
+    width: 75px;
+}
+
+.Bebidas{
+    width: 80px;
+}
+
+.spanShowase img {
+    width: 18px;
+    margin-right: 9px;
+}
+
+.price{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #212529;
+    font-weight: bold;
 }
 
 #titleCart {
     background-color: #FF2253;
     color: #FFFFFF;
-    width: 90vw;
+    width: 300px;
     max-width: 343px;
     font-family: 'Poppins', sans-serif;
     height: 60px;
@@ -187,7 +213,7 @@ display: flex;
 }
 
 .emptyCart {
-    width: 90vw;
+    width: 300px;
     max-width: 343px;
     height: 432px;
     display: flex;
@@ -220,8 +246,9 @@ display: flex;
 
 .products--card {
     display: flex;
-    width: 90vw;
-    max-width: 343px;
+    width: 300px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .img--card {
@@ -231,13 +258,6 @@ display: flex;
     border-radius: 8px;   
 }
 
-#cartList .info h2 {
-    width: 160px;
-    height: 22px;
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: clip ellipsis;
-}
 
 .imgRemoveCart {
     background-color: transparent;
@@ -256,13 +276,12 @@ display: flex;
 }
 
 #shoppingCart ul{
-    width: 90vw;
-    max-width: 343px;
+    width: 300px;
     height: 436px;
-    overflow-x: auto;
 }
 
 .info {
+    width: 160px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -271,15 +290,33 @@ display: flex;
 }
 
 .info h2 {
+    width: 160px;
     font-size: 14px;
     font-weight: bold;
     height: 22px;
     line-height: 20px;
+    height: 22px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info span{
+    color: #868E96;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.price--card{
+    color: #212529;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 #quantityProducts {
-    width: 90vw;
-    max-width: 343px;
+    width: 300px;
     display: flex;
     justify-content: space-between;
     height: 38px;
@@ -290,8 +327,7 @@ display: flex;
 }
 
 #totalPrice {
-    width: 90vw;
-    max-width: 343px;
+    width: 300px;
     display: flex;
     justify-content: space-between;
     height: 38px;
@@ -396,7 +432,6 @@ display: flex;
     .information p{
         height: 50px;
         text-overflow: auto;
-        
     }
 
     #titleCart {

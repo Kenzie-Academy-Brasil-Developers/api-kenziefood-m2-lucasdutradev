@@ -1,8 +1,10 @@
 import { RequestProducts } from '../requestFetch.js'
 import { BuildProductLayout } from '../models/modelDOM.js'
 
-// priceTotal.innerText = productsInCard.reduce((acum, value) => acum + value.preco, 0)
-// productTotal.innerText = productsInCard.length
+const priceTotal = document.querySelector('#priceTotal')
+
+const quantity = document.querySelector('#quantity')
+
 
 class CreateElementsCards {
 
@@ -34,6 +36,10 @@ class CreateElementsCards {
         if(localStorage.getItem("productsInCard")){
             this.productsInCard = JSON.parse(localStorage.getItem("productsInCard"))
             this.mountCard(this.productsInCard)
+            let total = this.productsInCard.reduce((acum, value) => acum + value.preco, 0)
+            total = total.toFixed(2)
+            priceTotal.innerText = `R$ ${total}`
+            quantity.innerText = this.productsInCard.length
         }
     }
     
@@ -48,6 +54,10 @@ class CreateElementsCards {
                 console.log(this.productsInCard)
                 console.log(localStorage.getItem("productsInCard"))
                 this.mountCard(this.productsInCard)
+                let total = this.productsInCard.reduce((acum, value) => acum + value.preco, 0)
+                total = total.toFixed(2)
+                priceTotal.innerText = `R$ ${total}`
+                quantity.innerText = this.productsInCard.length
         }
 
     static
@@ -62,6 +72,10 @@ class CreateElementsCards {
         localStorage.setItem("productsInCard", JSON.stringify(this.productsInCard))
         console.log(this.productsInCard)
         this.mountCard(productsInCard);
+        let total = this.productsInCard.reduce((acum, value) => acum + value.preco, 0)
+        total = total.toFixed(2)
+        priceTotal.innerText = `R$ ${total}`
+        quantity.innerText = this.productsInCard.length
     };
 }
 
