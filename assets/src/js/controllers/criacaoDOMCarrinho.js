@@ -25,6 +25,10 @@ class CreateElementsCards {
 
     static
         async add() {
+        if(localStorage.getItem("productsInCard")){
+            this.productsInCard = JSON.parse(localStorage.getItem("productsInCard"))
+            this.mountCard(this.productsInCard)
+        }
         let data = await RequestProducts.getProducts()
         let datasOrder
         const buttonAdd = document.querySelectorAll(".imgAddCart");
@@ -34,7 +38,9 @@ class CreateElementsCards {
                 console.log(data)
                 console.log(datasOrder)
                 this.productsInCard.push(data.find((product) => product.id === datasOrder))
+                localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
                 console.log(this.productsInCard)
+                console.log(localStorage.getItem("productsInCard"))
                 this.mountCard(this.productsInCard)
             });
         });
@@ -49,6 +55,7 @@ class CreateElementsCards {
             const index = Array.prototype.indexOf.call(childs, divProduct);
             console.log(index);
             productsInCard.splice(index, 1);
+            localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
             console.log(this.productsInCard)
             this.mountCard(productsInCard);
         };
