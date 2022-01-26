@@ -14,7 +14,7 @@ class CreateElementsCards {
         card.innerHTML = "";
         const newCard = new BuildProductLayout(products);
         card.innerHTML = newCard.buildCard();
-        let buttonRemove = document.querySelectorAll("button.remove--card");
+        let buttonRemove = document.querySelectorAll("button.imgRemoveCart");
         console.log(buttonRemove)
         buttonRemove.forEach((button) => {
             button.addEventListener("click", () => {
@@ -45,7 +45,7 @@ class CreateElementsCards {
             console.log('hi')
             const boxCard = document.querySelector('#cartList');
             const childs = boxCard.childNodes;
-            const divProduct = button.closest("div.products--card");
+            const divProduct = button.closest("li.products--card");
             const index = Array.prototype.indexOf.call(childs, divProduct);
             console.log(index);
             productsInCard.splice(index, 1);
