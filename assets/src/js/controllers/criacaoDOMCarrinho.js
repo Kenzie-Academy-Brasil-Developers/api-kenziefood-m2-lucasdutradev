@@ -1,47 +1,63 @@
 import { RequestProducts } from '../requestFetch.js'
+import { BuildProductLayout } from '../models/modelDOM.js'
+
+// priceTotal.innerText = productsInCard.reduce((acum, value) => acum + value.preco, 0)
+// productTotal.innerText = productsInCard.length
 
 class CreateElementsCards {
+    static
+        async mountCard(products) {
+        const card = document.querySelector("div.emptyCart");
+        card.innerHTML = "";
+        const newCard = new BuildProductLayout(products);
+        card.innerHTML = newCard.buildCard();
+    }
 
     static
-        async createDOM(clickId) {
-        let data = await RequestProducts.getProducts() // aqui capturamos a data que vem do fetch
-        let datasOrder = await clickId
-        let productsInCard = [] // aqui sera armazenado os itens que existem dentro do carrinho
-        let pricesCard = []
-        datasOrder.forEach((order) => productsInCard.push(data.find((product) => product.id === order)))
+        async add() {
+        let data = await RequestProducts.getProducts()
+        let datasOrder = []
+        const buttonAdd = document.querySelectorAll(".addCarrinho");
+        console.log(buttonAdd)
+        buttonAdd.forEach((button) => {
+            button.addEventListener("click", () => {
+                datasOrder.push(Number(button.closest("div.products").id));
+                let productsInCard = []
+                console.log(data)
+                console.log(datasOrder)
+                datasOrder.forEach((order) => productsInCard.push(data.find((product) => product.id === order)))
+                console.log(productsInCard)
+                this.mountCard(productsInCard)
 
-        const card = document.querySelector(".card"); // box de captura
-        const priceTotal = document.createElement("p");
-        const productTotal = document.createElement("p");
-
-        productsInCard.forEach((valor) => {
-            const img = document.createElement("img");
-            const categoria = document.createElement("span")
-            const h2 = document.createElement("h2");
-            const p = document.createElement("p");
-            const preco = document.createElement("p");
-
-            img.src = valor.imagem;
-
-            categoria.innerText = valor.categoria;
-            h2.innerText = valor.nome;
-            p.innerText = valor.descricao;
-            preco.innerText = valor.preco;
-
-            // dar apend no box que capturar
-
-            // card.appendChild(img)
-            // card.appendChild(categoria)
-            // card.appendChild(h2)
-            // card.appendChild(p)
-            // card.appendChild(preco)
+                const buttonRemove = document.querySelectorAll("button.remove--card");
+                console.log(buttonRemove)
+                buttonRemove.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const boxCard = document.querySelector('.emptyCart');
+                        const childs = boxCard.childNodes;
+                        const divProduct = button.closest("div.products--card");
+                        const index = Array.prototype.indexOf.call(childs, divProduct);
+                        console.log(index);
+                        productsInCard.splice(index, 1);
+                        this.mountCard(productsInCard);
+                    });
+                });
+            });
         });
-        priceTotal.innerText = productsInCard.reduce((acum, value) => acum + value.preco, 0)
-        productTotal.innerText = productsInCard.length
-        console.log(productsInCard)
-        console.log(priceTotal)
-        console.log(productTotal)
     }
+
+    // static
+    //     async remove() {
+    //     const buttonRemove = document.querySelectorAll("button.remove--card");
+    //     buttonRemove.forEach((button) => {
+    //         button.addEventListener("click", async () => {
+    //             console.log("chamado");
+    //         });
+    //     });
+    // }
 }
 
+setTimeout(() => {
+    CreateElementsCards.add()
+}, 300)
 export { CreateElementsCards }
