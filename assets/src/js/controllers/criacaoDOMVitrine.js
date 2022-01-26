@@ -30,7 +30,7 @@ drinks.addEventListener('click', () => {
 class CreateShowcase {
     static
         async buildShowcase() {
-        const allProducts = await RequestProducts.getProducts()
+        const allProducts = await RequestProducts.getMyProducts()
         const builder = new BuildProductLayout(allProducts)
         vitrine.innerHTML = builder.buildShowcase()
         const buttonAdd = document.querySelectorAll(".imgAddCart");
@@ -43,7 +43,7 @@ class CreateShowcase {
     }
     static
         async filterShowcaseSection(section) {
-        const allProducts = await RequestProducts.getProducts()
+        const allProducts = await RequestProducts.getMyProducts()
         const filteredProducts = allProducts.filter(product => product.categoria == section)
         const builder = new BuildProductLayout(filteredProducts)
         vitrine.innerHTML = builder.buildShowcase()
@@ -58,7 +58,7 @@ class CreateShowcase {
     static
         async filterShowcaseSearch(search) {
         if (search != '') {
-            const allProducts = await RequestProducts.getProducts()
+            const allProducts = await RequestProducts.getMyProducts()
             const filteredProducts = allProducts.filter(product => { return product.categoria.toLowerCase().includes(search) || product.nome.toLowerCase().includes(search) })
             if (filteredProducts.length > 0) {
                 const builder = new BuildProductLayout(filteredProducts)
