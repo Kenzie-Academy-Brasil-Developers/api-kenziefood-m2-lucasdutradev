@@ -10,22 +10,24 @@ class CreateElementsCards {
 
     static
         async mountCard(products) {
-        const card = document.querySelector("#cartList");
-        card.innerHTML = "";
-        const newCard = new BuildProductLayout(products);
-        card.innerHTML = newCard.buildCard();
-        let buttonRemove = document.querySelectorAll("button.imgRemoveCart");
-        console.log(buttonRemove)
-        buttonRemove.forEach((button) => {
-            button.addEventListener("click", () => {
-                this.remove(button,products)
+        if (this.productsInCard[0] !== undefined) {
+            const card = document.querySelector("#cartList");
+            card.innerHTML = "";
+            const newCard = new BuildProductLayout(products);
+            card.innerHTML = newCard.buildCard();
+            let buttonRemove = document.querySelectorAll("button.imgRemoveCart");
+            console.log(buttonRemove)
+            buttonRemove.forEach((button) => {
+                button.addEventListener("click", () => {
+                    this.remove(button, products)
+                });
             });
-        });
+        }
     }
 
     static
         async add() {
-        if(localStorage.getItem("productsInCard")){
+        if (localStorage.getItem("productsInCard")) {
             this.productsInCard = JSON.parse(localStorage.getItem("productsInCard"))
             this.mountCard(this.productsInCard)
         }
@@ -38,7 +40,7 @@ class CreateElementsCards {
                 console.log(data)
                 console.log(datasOrder)
                 this.productsInCard.push(data.find((product) => product.id === datasOrder))
-                localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
+                localStorage.setItem("productsInCard", JSON.stringify(this.productsInCard))
                 console.log(this.productsInCard)
                 console.log(localStorage.getItem("productsInCard"))
                 this.mountCard(this.productsInCard)
@@ -47,18 +49,18 @@ class CreateElementsCards {
     }
 
     static
-        remove(button,productsInCard) {
-            console.log('hi')
-            const boxCard = document.querySelector('#cartList');
-            const childs = boxCard.childNodes;
-            const divProduct = button.closest("li.products--card");
-            const index = Array.prototype.indexOf.call(childs, divProduct);
-            console.log(index);
-            productsInCard.splice(index, 1);
-            localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
-            console.log(this.productsInCard)
-            this.mountCard(productsInCard);
-        };
+        remove(button, productsInCard) {
+        console.log('hi')
+        const boxCard = document.querySelector('#cartList');
+        const childs = boxCard.childNodes;
+        const divProduct = button.closest("li.products--card");
+        const index = Array.prototype.indexOf.call(childs, divProduct);
+        console.log(index);
+        productsInCard.splice(index, 1);
+        localStorage.setItem("productsInCard", JSON.stringify(this.productsInCard))
+        console.log(this.productsInCard)
+        this.mountCard(productsInCard);
+    };
 }
 
 setTimeout(() => {
