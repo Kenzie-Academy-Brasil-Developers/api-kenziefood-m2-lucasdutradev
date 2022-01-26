@@ -85,6 +85,6 @@ class captureInputs {
     }
 }
 
-captureInputs.select()
+// captureInputs.select()
 
 export { captureInputs }
