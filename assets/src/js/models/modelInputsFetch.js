@@ -59,12 +59,12 @@ class captureInputs {
                 "imagem": image,
                 "descricao": descricao
             }
-            RequestProducts.getMyProducts()
-            RequestProducts.postMyProducts(data)
+            RequestProducts.postMyProducts(data);
         });
         buttonDelet.addEventListener("click", (event) => {
             event.preventDefault()
-            const id = document.querySelector("#id").value
+            const id = document.querySelector("#id").value;
+            RequestProducts.deletMyProducts(Number(id));
         });
         buttonUpdate.addEventListener("click", (event) => {
             event.preventDefault()
@@ -84,7 +84,5 @@ class captureInputs {
         });
     }
 }
-
-captureInputs.select()
 
 export { captureInputs }
