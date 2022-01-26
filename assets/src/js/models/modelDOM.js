@@ -24,7 +24,7 @@ class BuildProductLayout{
         return this.products.map(product=>{ 
             return `<li class="products--card">
                         <img class="img--card" src="${product.imagem}" alt="${product.nome}">
-                        <div class="infos">
+                        <div class="info">
                             <h2>${product.nome}</h2>
                             <span>${product.categoria}</span>
                             <p class="price--card">${product.preco}</p>

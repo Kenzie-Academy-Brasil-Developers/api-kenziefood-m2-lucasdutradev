@@ -24,6 +24,10 @@ class CreateElementsCards {
 
     static
         async add() {
+        if(localStorage.getItem("productsInCard")){
+            this.productsInCard = JSON.parse(localStorage.getItem("productsInCard"))
+            this.mountCard(this.productsInCard)
+        }
         let data = await RequestProducts.getProducts()
         let datasOrder
         const buttonAdd = document.querySelectorAll(".imgAddCart");
@@ -31,7 +35,9 @@ class CreateElementsCards {
             button.addEventListener("click", () => {
                 datasOrder = Number(button.closest("div.products").id);
                 this.productsInCard.push(data.find((product) => product.id === datasOrder))
+                localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
                 console.log(this.productsInCard)
+                console.log(localStorage.getItem("productsInCard"))
                 this.mountCard(this.productsInCard)
             });
         });
@@ -42,9 +48,10 @@ class CreateElementsCards {
             console.log('hi')
             const boxCard = document.querySelector('#cartList');
             const childs = boxCard.childNodes;
-            const divProduct = button.closest("div.products--card");
+            const divProduct = button.closest("li.products--card");
             const index = Array.prototype.indexOf.call(childs, divProduct);
             productsInCard.splice(index, 1);
+            localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
             console.log(this.productsInCard)
             this.mountCard(productsInCard);
         };

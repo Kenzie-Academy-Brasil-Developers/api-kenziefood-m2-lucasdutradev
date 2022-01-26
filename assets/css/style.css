@@ -3,7 +3,7 @@ header {
 }
 
 #carousel {
-    width: 340px;
+    width: 300px;
     overflow-x: auto;
 }
 
@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 340spx;
+    width: 290px;
     border: none;
     border-radius: 25px;
     background-color: #F8F9FA;
@@ -47,6 +47,8 @@ header {
 
 #filterButtons {
     display: flex;
+    width: fit-content;
+    gap: 5px;
 }
 
 .filters {
@@ -61,10 +63,14 @@ header {
 #all {
     width: 72px;
     border: 1px solid black;
-    background-color: #F8F9FA;
+    background-color: #F8F9FA;    
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-#bakery {
+#products {
     width: 148px;
     background-color: #FFF7F4;
 }
@@ -86,24 +92,26 @@ header {
 }
 
 .imgshowase {
-    width: 300px;
+    width: 290px;
     height: 200px;
 }
 
 .information {
-    width: 300px;
+    width: 290px;
 }
 
 .information h2 {
     font-size: 16px;
     font-weight: 700;
     line-height: 26px;
-    margin-top: 15px;
     margin-bottom: 16px;
     font-family: 'Poppins', sans-serif;    
 }
 
 .spanShowase {
+    position: relative;
+    bottom: 20px;
+    left: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -113,7 +121,7 @@ header {
     border-radius: 30px;
     width: 132px;
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
+    font-size: 12px;    
 }
 
 .spanShowase img {
@@ -145,7 +153,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 290px;
 }
 
 #showcaseList {
@@ -159,13 +167,14 @@ display: flex;
 #titleCart {
     background-color: #FF2253;
     color: #FFFFFF;
-    width: 340px;
+    width: 290px;
     font-family: 'Poppins', sans-serif;
     height: 60px;
     border-radius: 15px 15px 0 0;
     margin-bottom: 6px;
     display: flex;
     align-items: center;
+    margin-top: 37px;
 }
 
 #titleCart img {
@@ -174,7 +183,7 @@ display: flex;
 }
 
 .emptyCart {
-    width: 340px;
+    width: 290px;
     height: 432px;
     display: flex;
     flex-direction: column;
@@ -204,18 +213,20 @@ display: flex;
     text-align: center;
 }
 
-.productInCart {
+.products--card {
     display: flex;
+    width: 290px;
 }
 
-.imgProductCart {
+.img--card {
     width: 75px;
     height: 75px;
-    margin: 18px 13px 23px 10px;    
+    margin: 18px 13px 23px 10px; 
+    border-radius: 8px;   
 }
 
-#cartList .information h2 {
-    width: 190px;
+#cartList .info h2 {
+    width: 160px;
     height: 22px;
     display: inline-block;
     white-space: nowrap;
@@ -239,7 +250,56 @@ display: flex;
     height: 26px;
 }
 
-#shoppingCart {
-    width: 340px;
+#shoppingCart ul{
+    width: 290px;
     height: 436px;
+    overflow-x: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.info h2 {
+    font-size: 14px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 20px;
+}
+
+#quantityProducts {
+    width: 290px;
+    display: flex;
+    justify-content: space-between;
+    height: 38px;
+    background-color: #F8F9FA;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#totalPrice {
+    width: 290px;
+    display: flex;
+    justify-content: space-between;
+    height: 38px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#totalPrice p, span{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Poppins';
+}
+
+#quantityProducts p, span{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Poppins';
 }
