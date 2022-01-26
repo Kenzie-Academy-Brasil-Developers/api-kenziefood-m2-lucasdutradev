@@ -10,7 +10,7 @@ class CreateElementsCards {
 
     static
         async mountCard(products) {
-        const card = document.querySelector("div.emptyCart");
+        const card = document.querySelector("#cartList");
         card.innerHTML = "";
         const newCard = new BuildProductLayout(products);
         card.innerHTML = newCard.buildCard();
@@ -27,10 +27,10 @@ class CreateElementsCards {
         async add() {
         let data = await RequestProducts.getProducts()
         let datasOrder
-        const buttonAdd = document.querySelectorAll(".addCarrinho");
+        const buttonAdd = document.querySelectorAll(".imgAddCart");
         buttonAdd.forEach((button) => {
             button.addEventListener("click", () => {
-                datasOrder = Number(button.closest("div.products").id);
+                datasOrder = Number(button.closest("li.products").id);
                 console.log(data)
                 console.log(datasOrder)
                 this.productsInCard.push(data.find((product) => product.id === datasOrder))
@@ -43,7 +43,7 @@ class CreateElementsCards {
     static
         remove(button,productsInCard) {
             console.log('hi')
-            const boxCard = document.querySelector('.emptyCart');
+            const boxCard = document.querySelector('#cartList');
             const childs = boxCard.childNodes;
             const divProduct = button.closest("div.products--card");
             const index = Array.prototype.indexOf.call(childs, divProduct);
