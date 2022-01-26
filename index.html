@@ -38,58 +38,26 @@
             </div>
             <section id="showase">
                 <ul id="showcaseList">
-                    <li class="bakery">
-                        <img class="imgshowase" src="./assets/images/panqueca.png" alt="panqueca">
-                        <span class="spanShowase"><img src="./assets/images/Panificadora.png"
-                                alt="icon">Panificadora</span>
-
-                        <div class="information">
-                            <h2>Panqueca de banana com aveia</h2>
-                            <p class="description">Esta receita serve muito bem 2 pessoas,
-                                deixa a gente bem satisfeito, se não tiver outra opção de café.
-                                Se tiver mais comida, como pães e frutas.
-                            </p>
-                            <div id="priceBuy">
-                                <p class="price--card">R$ 20.00</p>
-                                <button class="imgAddCart"><img src="./assets/images/addCarrinho.png"
-                                        alt="addCarrinho"></button>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="bakery">
-                        <img class="imgshowase" src="./assets/images/panqueca.png" alt="panqueca">
-                        <span class="spanShowase"><img src="./assets/images/Panificadora.png"
-                                alt="icon">Panificadora</span>
-
-                        <div class="information">
-                            <h2>Panqueca de banana com aveia</h2>
-                            <p class="description">Esta receita serve muito bem 2 pessoas,
-                                deixa a gente bem satisfeito, se não tiver outra opção de café.
-                                Se tiver mais comida, como pães e frutas.
-                            </p>
-                            <p class="price">R$ 20.00</p>
-                            <button class="imgAddCart"><img src="./assets/images/addCarrinho.png"
-                                    alt="addCarrinho"></button>
-                        </div>
-                    </li>
                 </ul>
             </section>
         </div>
         <section id="shoppingCart">
             <h3 id="titleCart"><img src="./assets/images/carrinhoCarrinho.png" alt="icon"> Carrinho</h3>
             <ul id="cartList">
-                <li class="products--card">
-                    <img class="img--card" src="./assets/images/panqueca.png" alt="panqueca">
-                    <div class="info">
-                        <h2>Panqueca de banana com aveia</h2>
-                        <span>Panificadora</span>
-                        <p class="price--card">R$ 20.00</p>
-                    </div>
-                    <button class="imgRemoveCart"><img src="./assets/images/excluirCarrinho.png"
-                            alt="addCarrinho"></button>
-                </li>
+                <div class="emptyCart">
+                    <img src="./assets/images/SacolaVazia.png" alt="SacolaVazia">
+                    <h3>Ops!</h3>
+                    <p>Por enquanto nao temos produtos no carrinho</p>
+                </div>
             </ul>
+            <div id="quantityProducts">
+                <p>Quantidade</p>
+                <span id="quantity">0</span>
+            </div>
+            <div id="totalPrice">
+                <p>Total</p>
+                <span id="priceTotal">R$ 0.00</span>
+            </div>
         </section>
     </main>
     <script type="module" src="./assets/src/js/controllers/criacaoDOMCarrinho.js"></script>
