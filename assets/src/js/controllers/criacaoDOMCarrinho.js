@@ -13,15 +13,20 @@ class CreateElementsCards {
     static
         async mountCard(products) {
         const card = document.querySelector("#cartList");
-        card.innerHTML = "";
         const newCard = new BuildProductLayout(products);
-        card.innerHTML = newCard.buildCard();
-        let buttonRemove = document.querySelectorAll("button.remove--card");
-        buttonRemove.forEach((button) => {
-            button.addEventListener("click", () => {
-                this.remove(button,products)
+        if (this.productsInCard[0] === undefined) {
+            card.innerHTML = newCard.buildCardEmpity()
+        } else {
+            card.innerHTML = newCard.buildCard();
+            let buttonRemove = document.querySelectorAll("button.imgRemoveCart");
+            console.log(buttonRemove)
+            buttonRemove.forEach((button) => {
+                button.addEventListener("click", () => {
+                    this.remove(button, products)
+                });
             });
-        });
+        }
+
     }
 
     static
@@ -46,17 +51,18 @@ class CreateElementsCards {
         }
 
     static
-        remove(button,productsInCard) {
-            console.log('hi')
-            const boxCard = document.querySelector('#cartList');
-            const childs = boxCard.childNodes;
-            const divProduct = button.closest("li.products--card");
-            const index = Array.prototype.indexOf.call(childs, divProduct);
-            productsInCard.splice(index, 1);
-            localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
-            console.log(this.productsInCard)
-            this.mountCard(productsInCard);
-        };
+        remove(button, productsInCard) {
+        console.log('hi')
+        const boxCard = document.querySelector('#cartList');
+        const childs = boxCard.childNodes;
+        const divProduct = button.closest("li.products--card");
+        const index = Array.prototype.indexOf.call(childs, divProduct);
+        console.log(index);
+        productsInCard.splice(index, 1);
+        localStorage.setItem("productsInCard", JSON.stringify(this.productsInCard))
+        console.log(this.productsInCard)
+        this.mountCard(productsInCard);
+    };
 }
 
 setTimeout(() => {
