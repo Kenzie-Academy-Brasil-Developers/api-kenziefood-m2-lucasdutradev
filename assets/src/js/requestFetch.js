@@ -43,7 +43,6 @@ class RequestProducts {
             headers: { Authorization: "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImlhdCI6MTY0MzExODAwMiwiZXhwIjoxNjQzOTgyMDAyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.eJRSB14eZyAje7x5c6W7u9UXJdr-_mFCVoGALXzwyJI" },
         });
         const processedProducts = await response.json();
-        console.log(processedProducts)
         return processedProducts
     }
 }
