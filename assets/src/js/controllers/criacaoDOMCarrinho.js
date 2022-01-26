@@ -1,47 +1,60 @@
 import { RequestProducts } from '../requestFetch.js'
+import { BuildProductLayout } from '../models/modelDOM.js'
+
+// priceTotal.innerText = productsInCard.reduce((acum, value) => acum + value.preco, 0)
+// productTotal.innerText = productsInCard.length
 
 class CreateElementsCards {
 
+    static productsInCard = []
+
     static
-        async createDOM(clickId) {
-        let data = await RequestProducts.getProducts() // aqui capturamos a data que vem do fetch
-        let datasOrder = await clickId
-        let productsInCard = [] // aqui sera armazenado os itens que existem dentro do carrinho
-        let pricesCard = []
-        datasOrder.forEach((order) => productsInCard.push(data.find((product) => product.id === order)))
-
-        const card = document.querySelector(".card"); // box de captura
-        const priceTotal = document.createElement("p");
-        const productTotal = document.createElement("p");
-
-        productsInCard.forEach((valor) => {
-            const img = document.createElement("img");
-            const categoria = document.createElement("span")
-            const h2 = document.createElement("h2");
-            const p = document.createElement("p");
-            const preco = document.createElement("p");
-
-            img.src = valor.imagem;
-
-            categoria.innerText = valor.categoria;
-            h2.innerText = valor.nome;
-            p.innerText = valor.descricao;
-            preco.innerText = valor.preco;
-
-            // dar apend no box que capturar
-
-            // card.appendChild(img)
-            // card.appendChild(categoria)
-            // card.appendChild(h2)
-            // card.appendChild(p)
-            // card.appendChild(preco)
+        async mountCard(products) {
+        const card = document.querySelector("div.emptyCart");
+        card.innerHTML = "";
+        const newCard = new BuildProductLayout(products);
+        card.innerHTML = newCard.buildCard();
+        let buttonRemove = document.querySelectorAll("button.remove--card");
+        console.log(buttonRemove)
+        buttonRemove.forEach((button) => {
+            button.addEventListener("click", () => {
+                this.remove(button,products)
+            });
         });
-        priceTotal.innerText = productsInCard.reduce((acum, value) => acum + value.preco, 0)
-        productTotal.innerText = productsInCard.length
-        console.log(productsInCard)
-        console.log(priceTotal)
-        console.log(productTotal)
     }
+
+    static
+        async add() {
+        let data = await RequestProducts.getProducts()
+        let datasOrder
+        const buttonAdd = document.querySelectorAll(".addCarrinho");
+        buttonAdd.forEach((button) => {
+            button.addEventListener("click", () => {
+                datasOrder = Number(button.closest("div.products").id);
+                console.log(data)
+                console.log(datasOrder)
+                this.productsInCard.push(data.find((product) => product.id === datasOrder))
+                console.log(this.productsInCard)
+                this.mountCard(this.productsInCard)
+            });
+        });
+    }
+
+    static
+        remove(button,productsInCard) {
+            console.log('hi')
+            const boxCard = document.querySelector('.emptyCart');
+            const childs = boxCard.childNodes;
+            const divProduct = button.closest("div.products--card");
+            const index = Array.prototype.indexOf.call(childs, divProduct);
+            console.log(index);
+            productsInCard.splice(index, 1);
+            console.log(this.productsInCard)
+            this.mountCard(productsInCard);
+        };
 }
 
+setTimeout(() => {
+    CreateElementsCards.add()
+}, 300)
 export { CreateElementsCards }
