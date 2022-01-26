@@ -1,5 +1,3 @@
-
-
 class BuildProductLayout {
     constructor(ProductsArray) {
         this.products = ProductsArray
