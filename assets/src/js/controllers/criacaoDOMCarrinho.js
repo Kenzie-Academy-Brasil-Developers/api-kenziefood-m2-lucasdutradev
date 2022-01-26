@@ -8,6 +8,8 @@ class CreateElementsCards {
 
     static productsInCard = []
 
+    static datasOrder
+
     static
         async mountCard(products) {
         const card = document.querySelector("#cartList");
@@ -23,25 +25,25 @@ class CreateElementsCards {
     }
 
     static
-        async add() {
+        async update() {
         if(localStorage.getItem("productsInCard")){
             this.productsInCard = JSON.parse(localStorage.getItem("productsInCard"))
             this.mountCard(this.productsInCard)
         }
-        let data = await RequestProducts.getProducts()
-        let datasOrder
-        const buttonAdd = document.querySelectorAll(".imgAddCart");
-        buttonAdd.forEach((button) => {
-            button.addEventListener("click", () => {
-                datasOrder = Number(button.closest("div.products").id);
-                this.productsInCard.push(data.find((product) => product.id === datasOrder))
+    }
+    
+    static
+        async add(){
+                let data = await RequestProducts.getProducts()
+                console.log(data)
+                console.log(this.datasOrder)
+                console.log(this.productsInCard)
+                this.productsInCard.push(data.find((product) => product.id === this.datasOrder))
                 localStorage.setItem("productsInCard",JSON.stringify(this.productsInCard))
                 console.log(this.productsInCard)
                 console.log(localStorage.getItem("productsInCard"))
                 this.mountCard(this.productsInCard)
-            });
-        });
-    }
+        }
 
     static
         remove(button,productsInCard) {
@@ -58,7 +60,7 @@ class CreateElementsCards {
 }
 
 setTimeout(() => {
-    CreateElementsCards.add()
+    CreateElementsCards.update()
 }, 300)
 
 export { CreateElementsCards }
