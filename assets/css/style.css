@@ -3,7 +3,7 @@ header {
 }
 
 #carousel {
-    width: 300px;
+    width: 94vw;
     overflow-x: auto;
 }
 
@@ -16,7 +16,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 290px;
+    width: 90vw;
+    max-width: 343px;
     border: none;
     border-radius: 25px;
     background-color: #F8F9FA;
@@ -92,12 +93,15 @@ header {
 }
 
 .imgshowase {
-    width: 290px;
+    width: 296px;
     height: 200px;
 }
 
 .information {
-    width: 290px;
+    width: 296px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .information h2 {
@@ -153,7 +157,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 290px;
 }
 
 #showcaseList {
@@ -167,7 +170,8 @@ display: flex;
 #titleCart {
     background-color: #FF2253;
     color: #FFFFFF;
-    width: 290px;
+    width: 90vw;
+    max-width: 343px;
     font-family: 'Poppins', sans-serif;
     height: 60px;
     border-radius: 15px 15px 0 0;
@@ -183,7 +187,8 @@ display: flex;
 }
 
 .emptyCart {
-    width: 290px;
+    width: 90vw;
+    max-width: 343px;
     height: 432px;
     display: flex;
     flex-direction: column;
@@ -215,7 +220,8 @@ display: flex;
 
 .products--card {
     display: flex;
-    width: 290px;
+    width: 90vw;
+    max-width: 343px;
 }
 
 .img--card {
@@ -230,8 +236,7 @@ display: flex;
     height: 22px;
     display: inline-block;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip ellipsis;
 }
 
 .imgRemoveCart {
@@ -251,7 +256,8 @@ display: flex;
 }
 
 #shoppingCart ul{
-    width: 290px;
+    width: 90vw;
+    max-width: 343px;
     height: 436px;
     overflow-x: auto;
 }
@@ -272,7 +278,8 @@ display: flex;
 }
 
 #quantityProducts {
-    width: 290px;
+    width: 90vw;
+    max-width: 343px;
     display: flex;
     justify-content: space-between;
     height: 38px;
@@ -283,7 +290,8 @@ display: flex;
 }
 
 #totalPrice {
-    width: 290px;
+    width: 90vw;
+    max-width: 343px;
     display: flex;
     justify-content: space-between;
     height: 38px;
@@ -302,4 +310,139 @@ display: flex;
     font-weight: bold;
     font-size: 12px;
     font-family: 'Poppins';
+}
+
+@media(min-width: 700px){
+    header {
+        display: flex;
+        border-bottom: 1px solid #fff;
+        justify-content: space-between;
+        padding-left: 25px;
+        align-items: center;
+    }
+    main {
+        width: 80vw;
+        padding-top: 42px;
+        padding-left: 25px;
+    }
+
+    #logo {
+        margin-top: auto;
+    }
+
+    #carousel {
+        width:79vw;
+        overflow: visible;
+    }
+
+    #showcaseList {
+        overflow: auto;
+    }
+
+    #filterButtons {
+        gap: 30px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1500px){
+    header {
+        width: 90vw;
+    }
+    main {
+        display: flex;
+        width: 90vw;
+    }
+
+    #showcaseList {
+        flex-wrap: wrap;
+        width: 60vw;
+        height: 650px;
+        justify-content: space-around;
+    }
+    #showcaseList ul {
+        width: 400px;
+        margin-right: 26px;
+    }
+
+    #showcaseList li {
+        width: 200px;
+        margin-right: 26px;
+    }
+
+    .imgshowase {
+        width: 200px;
+        height: 150px;
+    }
+
+    #titleCart {
+        margin-top: 0px;
+    }
+
+    #filterButtons {
+        width: 60vw;
+        gap: 12px;
+    }
+
+    .information {
+        width: 200px;
+    }
+
+    .information h2{
+        height: 25px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .information p{
+        height: 50px;
+        text-overflow: auto;
+        
+    }
+
+    #titleCart {
+        width: 34vw;
+    }
+
+    .emptyCart {
+        width: 34vw;
+    }
+
+    #totalPrice{
+        width: 34vw;
+    }
+
+    #quantityProducts{
+        width: 34vw;
+    }
+
+    #shoppingCart ul{
+        width: 34vw;
+    }
+
+    .products--card{
+        width: 34vw;
+    }
+}
+
+@media(min-width: 1501px) {
+    header {
+        width: 90vw;
+        max-width: 1500px;
+    }
+    main {
+        display: flex;
+        width: 90vw;
+        max-width: 1500px;
+        background-color: rgba(230, 230, 230, 0.158);
+        padding-left: 20px;
+        padding-right: 30px;
+    }
+
+    #showcaseList {
+        flex-wrap: wrap;
+        width: 60vw;
+        height: 650px;
+        justify-content: space-around;
+        max-width: 1100px;
+    }
 }
