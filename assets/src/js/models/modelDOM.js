@@ -35,14 +35,12 @@ class BuildProductLayout {
 
     }
 
-    buildEmptyCard() {
-        return this.products.map(product => {
-            return `<div class="emptyCart">
-                        <img src="./assets/images/SacolaVazia.png" alt="SacolaVazia">
-                        <h3>Ops!</h3>
-                        <p>Por enquanto nao temos produtos no carrinho</p>
-                    </div>`}).join('')
-
+    buildCardEmpity() {
+        return `<div class="emptyCart">
+                    <img src = "./assets/images/SacolaVazia.png" alt = "SacolaVazia">
+                    <h3>Ops!</h3>
+                    <p>Por enquanto nao temos produtos no carrinho</p>
+                </div> `
     }
 }
 

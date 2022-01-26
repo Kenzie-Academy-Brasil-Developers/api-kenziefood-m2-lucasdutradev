@@ -10,10 +10,11 @@ class CreateElementsCards {
 
     static
         async mountCard(products) {
-        if (this.productsInCard[0] !== undefined) {
-            const card = document.querySelector("#cartList");
-            card.innerHTML = "";
-            const newCard = new BuildProductLayout(products);
+        const card = document.querySelector("#cartList");
+        const newCard = new BuildProductLayout(products);
+        if (this.productsInCard[0] === undefined) {
+            card.innerHTML = newCard.buildCardEmpity()
+        } else {
             card.innerHTML = newCard.buildCard();
             let buttonRemove = document.querySelectorAll("button.imgRemoveCart");
             console.log(buttonRemove)
@@ -23,6 +24,7 @@ class CreateElementsCards {
                 });
             });
         }
+
     }
 
     static
