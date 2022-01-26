@@ -3,7 +3,7 @@ header {
 }
 
 #carousel {
-    width: 340px;
+    width: 300px;
     overflow-x: auto;
 }
 
@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 340spx;
+    width: 300px;
     border: none;
     border-radius: 25px;
     background-color: #F8F9FA;
@@ -47,6 +47,8 @@ header {
 
 #filterButtons {
     display: flex;
+    width: fit-content;
+    gap: 5px;
 }
 
 .filters {
@@ -61,10 +63,14 @@ header {
 #all {
     width: 72px;
     border: 1px solid black;
-    background-color: #F8F9FA;
+    background-color: #F8F9FA;    
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-#bakery {
+#products {
     width: 148px;
     background-color: #FFF7F4;
 }
@@ -159,7 +165,7 @@ display: flex;
 #titleCart {
     background-color: #FF2253;
     color: #FFFFFF;
-    width: 340px;
+    width: 300px;
     font-family: 'Poppins', sans-serif;
     height: 60px;
     border-radius: 15px 15px 0 0;
@@ -174,7 +180,7 @@ display: flex;
 }
 
 .emptyCart {
-    width: 340px;
+    width: 300px;
     height: 432px;
     display: flex;
     flex-direction: column;
@@ -241,7 +247,7 @@ display: flex;
 }
 
 #shoppingCart {
-    width: 340px;
+    width: 300px;
     height: 436px;
     overflow-x: auto;
 }
