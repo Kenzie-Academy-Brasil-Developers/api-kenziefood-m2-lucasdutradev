@@ -1,9 +1,9 @@
 import {RequestProducts} from '../requestFetch.js'
 import {BuildProductLayout} from '../models/modelDOM.js'
 
-const vitrine = document.querySelector('#vitrine')
+const vitrine = document.querySelector('#showcaseList')
 
-const input = document.querySelector('#searchInput')
+const input = document.querySelector('#inputSearch')
 
 input.addEventListener('keypress',function(e){
     CreateShowcase.filterShowcaseSearch(input.value)
