@@ -6,36 +6,58 @@ import { BuildProductLayout } from '../models/modelDOM.js'
 
 class CreateElementsCards {
     static
+        async mountCard(products) {
+        const card = document.querySelector("div.emptyCart");
+        card.innerHTML = "";
+        const newCard = new BuildProductLayout(products);
+        card.innerHTML = newCard.buildCard();
+    }
+
+    static
         async add() {
         let data = await RequestProducts.getProducts()
         let datasOrder = []
-        const buttonAdd = document.querySelectorAll(".imgAddCart");
+        const buttonAdd = document.querySelectorAll(".addCarrinho");
+        console.log(buttonAdd)
         buttonAdd.forEach((button) => {
-            return button.addEventListener("click", async () => {
-                datasOrder.push(Number(button.closest("li").id));
+            button.addEventListener("click", () => {
+                datasOrder.push(Number(button.closest("div.products").id));
                 let productsInCard = []
                 console.log(data)
                 console.log(datasOrder)
                 datasOrder.forEach((order) => productsInCard.push(data.find((product) => product.id === order)))
                 console.log(productsInCard)
-                const card = document.querySelector("div.emptyCart");
-                card.innerHTML = "";
-                const newCard = new BuildProductLayout(productsInCard);
-                card.innerHTML = newCard.buildCard();
+                this.mountCard(productsInCard)
+
+                const buttonRemove = document.querySelectorAll("button.remove--card");
+                console.log(buttonRemove)
+                buttonRemove.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const boxCard = document.querySelector('.emptyCart');
+                        const childs = boxCard.childNodes;
+                        const divProduct = button.closest("div.products--card");
+                        const index = Array.prototype.indexOf.call(childs, divProduct);
+                        console.log(index);
+                        productsInCard.splice(index, 1);
+                        this.mountCard(productsInCard);
+                    });
+                });
             });
         });
     }
 
-    static
-        async remove() {
-        const buttonRemove = document.querySelectorAll("div .price--card");
-        console.log(buttonRemove)
-        buttonRemove.forEach((button) => {
-            button.addEventListener("click", async () => {
-            });
-        });
-    }
+    // static
+    //     async remove() {
+    //     const buttonRemove = document.querySelectorAll("button.remove--card");
+    //     buttonRemove.forEach((button) => {
+    //         button.addEventListener("click", async () => {
+    //             console.log("chamado");
+    //         });
+    //     });
+    // }
 }
 
-CreateElementsCards.add()
+setTimeout(() => {
+    CreateElementsCards.add()
+}, 300)
 export { CreateElementsCards }
