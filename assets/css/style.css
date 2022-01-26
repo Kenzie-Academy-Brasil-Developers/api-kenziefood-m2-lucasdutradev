@@ -1,6 +1,12 @@
 header {
     margin-bottom: 16px;
 }
+
+#carousel {
+    width: 340px;
+    overflow-x: auto;
+}
+
 #logo {
     width: 123px;
     margin-top: 34px;
@@ -10,13 +16,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 340spx;
     border: none;
     border-radius: 25px;
     background-color: #F8F9FA;
     height: 54px;
     margin-top: 15px;
     margin-right: 15px;
+    padding-left: 17px;
 }
 
 #inputSearch {
@@ -204,6 +211,7 @@ display: flex;
 .imgProductCart {
     width: 75px;
     height: 75px;
+    margin: 18px 13px 23px 10px;    
 }
 
 #cartList .information h2 {
@@ -217,9 +225,21 @@ display: flex;
 
 .imgRemoveCart {
     background-color: transparent;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-top: 18px;
 }
 
 .imgRemoveCart img{
     width: 26px;
     height: 26px;
+}
+
+#shoppingCart {
+    width: 340px;
+    height: 436px;
 }
