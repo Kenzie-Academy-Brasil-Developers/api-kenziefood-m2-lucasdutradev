@@ -15,7 +15,6 @@ class CreateElementsCards {
         const newCard = new BuildProductLayout(products);
         card.innerHTML = newCard.buildCard();
         let buttonRemove = document.querySelectorAll("button.remove--card");
-        console.log(buttonRemove)
         buttonRemove.forEach((button) => {
             button.addEventListener("click", () => {
                 this.remove(button,products)
@@ -31,8 +30,6 @@ class CreateElementsCards {
         buttonAdd.forEach((button) => {
             button.addEventListener("click", () => {
                 datasOrder = Number(button.closest("div.products").id);
-                console.log(data)
-                console.log(datasOrder)
                 this.productsInCard.push(data.find((product) => product.id === datasOrder))
                 console.log(this.productsInCard)
                 this.mountCard(this.productsInCard)
@@ -47,7 +44,6 @@ class CreateElementsCards {
             const childs = boxCard.childNodes;
             const divProduct = button.closest("div.products--card");
             const index = Array.prototype.indexOf.call(childs, divProduct);
-            console.log(index);
             productsInCard.splice(index, 1);
             console.log(this.productsInCard)
             this.mountCard(productsInCard);
@@ -57,4 +53,5 @@ class CreateElementsCards {
 setTimeout(() => {
     CreateElementsCards.add()
 }, 300)
+
 export { CreateElementsCards }
