@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styleAdm.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Pagina Admin</title>
+</head>
+
+<body>
+
+    <header>
+        <img id="logo" src="./assets/images/image.png" alt="logo">
+    </header>
+    <main>
+        <form action="">
+            <label class="title" for="products">Escolha qual acao quer tomar</label>
+            <select name="products" id="selectProducts">
+                <option value="add">Adicionar</option>
+                <option value="delete">Deletar</option>
+                <option value="path">Atualizar</option>
+            </select>
+            <div class="addInputs hidden">
+                <label for="name">Digite o nome do produto:</label>
+                <input type="text" id="name">
+                <label for="categoria">Digite a categoria do produto:</label>
+                <input type="text" id="categoria">
+                <label for="descricao">Digite a descricao do produto:</label>
+                <textarea name="descricao" id="descricao" cols="22" rows="5"></textarea>
+                <label for="preco">Digite o preco do produto:</label>
+                <input type="number" id="preco">
+                <label for="image">Digite a url da imagem do produto:</label>
+                <input type="url" id="image">
+            </div>
+            <div class="deleteInputs hidden">
+                <label for="id">Digite o id do produto que deseja deletar:</label>
+                <input type="number" id="id">
+            </div>
+            <div class="updateInputs hidden">
+                <label for="idPath">Digite o id do produto que deseja atualizar:</label>
+                <input type="number" id="idPath">
+                <label for="name">Digite o nome do produto:</label>
+                <input type="text" id="namePath">
+                <label for="categoria">Digite a categoria do produto:</label>
+                <input type="text" id="categoriaPath">
+                <label for="descricao">Digite a descricao do produto:</label>
+                <textarea name="descricao" id="descricaoPath" cols="30" rows="5"></textarea>
+                <label for="preco">Digite o preco do produto:</label>
+                <input type="number" id="precoPath">
+                <label for="image">Digite a url da imagem do produto:</label>
+                <input type="url" id="imagePath">
+            </div>
+            <button class="hidden" id="sendAdd">Enviar</button>
+            <button class="hidden" id="sendDelet">Enviar</button>
+            <button class="hidden" id="sendUpdate">Enviar</button>
+
+        </form>
+    </main>
+    <script type="module" src="./assets/src/js/models/modelInputsFetch.js"></script>
+    <script type="module" src="./assets/src/js/requestFetch.js"></script>
+</body>
+
+</html>
