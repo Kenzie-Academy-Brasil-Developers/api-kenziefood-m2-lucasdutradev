@@ -39,7 +39,7 @@ class BuildProductLayout {
         return `<div class="emptyCart">
                     <img src = "./assets/images/SacolaVazia.png" alt = "SacolaVazia">
                     <h3>Ops!</h3>
-                    <p>Por enquanto nao temos produtos no carrinho</p>
+                    <p>Por enquanto não temos produtos no carrinho</p>
                 </div> `
     }
 }
