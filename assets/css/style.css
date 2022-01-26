@@ -204,17 +204,18 @@ display: flex;
     text-align: center;
 }
 
-.productInCart {
+.products--card {
     display: flex;
 }
 
-.imgProductCart {
+.img--card {
     width: 75px;
     height: 75px;
-    margin: 18px 13px 23px 10px;    
+    margin: 18px 13px 23px 10px; 
+    border-radius: 8px;   
 }
 
-#cartList .information h2 {
+#cartList .info h2 {
     width: 190px;
     height: 22px;
     display: inline-block;
@@ -242,4 +243,20 @@ display: flex;
 #shoppingCart {
     width: 340px;
     height: 436px;
+    overflow-x: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.info h2 {
+    font-size: 14px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 20px;
 }
