@@ -3,7 +3,7 @@ header {
 }
 
 #carousel {
-    width: 340px;
+    width: 300px;
     overflow-x: auto;
 }
 
@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 340spx;
+    width: 300px;
     border: none;
     border-radius: 25px;
     background-color: #F8F9FA;
@@ -47,6 +47,8 @@ header {
 
 #filterButtons {
     display: flex;
+    width: fit-content;
+    gap: 5px;
 }
 
 .filters {
@@ -61,10 +63,14 @@ header {
 #all {
     width: 72px;
     border: 1px solid black;
-    background-color: #F8F9FA;
+    background-color: #F8F9FA;    
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-#bakery {
+#products {
     width: 148px;
     background-color: #FFF7F4;
 }
@@ -159,7 +165,7 @@ display: flex;
 #titleCart {
     background-color: #FF2253;
     color: #FFFFFF;
-    width: 340px;
+    width: 300px;
     font-family: 'Poppins', sans-serif;
     height: 60px;
     border-radius: 15px 15px 0 0;
@@ -174,7 +180,7 @@ display: flex;
 }
 
 .emptyCart {
-    width: 340px;
+    width: 300px;
     height: 432px;
     display: flex;
     flex-direction: column;
@@ -204,17 +210,18 @@ display: flex;
     text-align: center;
 }
 
-.productInCart {
+.products--card {
     display: flex;
 }
 
-.imgProductCart {
+.img--card {
     width: 75px;
     height: 75px;
-    margin: 18px 13px 23px 10px;    
+    margin: 18px 13px 23px 10px; 
+    border-radius: 8px;   
 }
 
-#cartList .information h2 {
+#cartList .info h2 {
     width: 190px;
     height: 22px;
     display: inline-block;
@@ -240,6 +247,22 @@ display: flex;
 }
 
 #shoppingCart {
-    width: 340px;
+    width: 300px;
     height: 436px;
+    overflow-x: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.info h2 {
+    font-size: 14px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 20px;
 }
