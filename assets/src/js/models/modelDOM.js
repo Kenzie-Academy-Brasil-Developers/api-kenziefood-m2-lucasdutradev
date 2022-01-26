@@ -8,7 +8,7 @@ class BuildProductLayout {
         return this.products.map(product => {
             return `<li class="products" id="${product.id}">
                         <img class="imgshowase" src="${product.imagem}" alt="${product.nome}">
-                        <span class="spanShowase"><img src="assets/images/${product.categoria}.png" alt="icon">${product.categoria}</span>
+                        <span class="spanShowase ${product.categoria}"><img src="assets/images/${product.categoria}.png" alt="icon">${product.categoria}</span>
                         <div class="information">
                             <h2>${product.nome}</h2>
                             <p class="description">${product.descricao}</p>
