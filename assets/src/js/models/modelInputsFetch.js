@@ -81,6 +81,7 @@ class captureInputs {
                 "imagem": image,
                 "descricao": descricao
             }
+            RequestProducts.patchMyProducts(data, Number(idPath))
         });
     }
 }
