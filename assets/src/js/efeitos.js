@@ -1,10 +1,21 @@
-function filtroCategoria(event) {
-    const filterSelect = event.target    
-    filterSelect.style = 'border: solid 1px black';
-}
+// const all = document.querySelector('#all')
+// all.addEventListener('click', (e) => {
+    
+// })
+// const bakery = document.querySelector('#bakery')
+// bakery.addEventListener('click', (e) => {
+//     const filterSelect = e.target    
+//     filterSelect.style.border = '1px solid #000';
+// })
+// const fruits = document.querySelector('#fruits')
+// fruits.addEventListener('click', (e) => {
+//     const filterSelect = e.target    
+//     filterSelect.style.border = '1px solid #000';
+// })
+// const drinks = document.querySelector('#drinks')
+// drinks.addEventListener('click', (e) => {
+//     const filterSelect = e.target    
+//     console.log(e.target)
+//     filterSelect.style.border = '1px solid #000';
+// })
 
-
-all.addEventListener('click', filtroCategoria)
-bakery.addEventListener('click', filtroCategoria)
-fruits.addEventListener('click', filtroCategoria)
-drinks.addEventListener('click', filtroCategoria)
