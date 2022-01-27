@@ -41,7 +41,7 @@
     text-align: center;
 }
 
-.hidden{
+div.hidden, button.hidden{
     display: none;
 }
 
@@ -78,7 +78,7 @@ form{
     justify-content: center;
 }
 
-div{
+.divinput{
     margin: 20px 0;
     display: flex;
     flex-direction: column;
@@ -152,10 +152,26 @@ button:hover{
 }
 
 @media screen and (min-width: 768px) {
+    .modal{
+        position: absolute;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.404);
+    }
+
+    .box-msg{
+        flex-direction: column;
+    }
+
     form{
         max-width: 700px;
     }
-    div{
+    .divinput{
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-end;

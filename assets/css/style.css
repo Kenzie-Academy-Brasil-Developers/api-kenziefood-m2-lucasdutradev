@@ -1,7 +1,10 @@
+h2, p{
+    font-family: 'Poppins', sans-serif; 
+}
+
 body {
     display: flex;
     flex-direction: column;
-    font-family: 'Poppins', sans-serif; 
 }
 
 .admin{
@@ -337,6 +340,7 @@ button:hover{
 }
 
 #shoppingCart ul{
+    background-color: #F8F9FA;
     width: 300px;
     height: 436px;
     overflow-y: auto;
@@ -440,7 +444,6 @@ button:hover{
 }
 
 @media(min-width: 900px) and (max-width: 1500px){
-
     header {
         width: 90vw;
     }
@@ -484,30 +487,18 @@ button:hover{
         width: 200px;
     }
 
+    #filterButtons{
+        margin-bottom: 58px;
+    }
+
     .information h2{
         height: 25px;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
 
-    #titleCart {
-        width: 30vw;
-    }
-
     .emptyCart {
         width: 25vw;
-    }
-
-    #totalPrice{
-        width: 25vw;
-    }
-
-    #quantityProducts{
-        width: 25vw;
-    }
-
-    #shoppingCart ul{
-        width: 34vw;
     }
 
     .products--card{
@@ -546,6 +537,10 @@ button:hover{
         justify-content: space-around;
         max-width: 1100px;
         margin-left:80px;
+    }
+
+    #filterButtons{
+        margin-bottom: 58px;
     }
 
 
