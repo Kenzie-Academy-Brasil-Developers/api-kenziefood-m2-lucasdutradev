@@ -11,20 +11,36 @@ input.addEventListener('keyup', function (e) {
 })
 
 const all = document.querySelector('#all')
-all.addEventListener('click', () => {
+all.addEventListener('click', (e) => {
     CreateShowcase.buildShowcase()
+    all.classList.add('activeFilter')
+    bakery.classList.remove('activeFilter')
+    fruits.classList.remove('activeFilter')
+    drinks.classList.remove('activeFilter')
 })
 const bakery = document.querySelector('#bakery')
-bakery.addEventListener('click', () => {
+bakery.addEventListener('click', (e) => {
     CreateShowcase.filterShowcaseSection('Panificadora')
+    bakery.classList.add('activeFilter')
+    all.classList.remove('activeFilter')
+    fruits.classList.remove('activeFilter')
+    drinks.classList.remove('activeFilter')
 })
 const fruits = document.querySelector('#fruits')
-fruits.addEventListener('click', () => {
+fruits.addEventListener('click', (e) => {
     CreateShowcase.filterShowcaseSection('Frutas')
+    fruits.classList.add('activeFilter')
+    bakery.classList.remove('activeFilter')
+    all.classList.remove('activeFilter')
+    drinks.classList.remove('activeFilter')
 })
 const drinks = document.querySelector('#drinks')
-drinks.addEventListener('click', () => {
+drinks.addEventListener('click', (e) => {
     CreateShowcase.filterShowcaseSection('Bebidas')
+    drinks.classList.add('activeFilter')
+    bakery.classList.remove('activeFilter')
+    fruits.classList.remove('activeFilter')
+    all.classList.remove('activeFilter')
 })
 
 class CreateShowcase {
