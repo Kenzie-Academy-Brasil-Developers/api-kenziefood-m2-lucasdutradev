@@ -13,12 +13,39 @@
 </head>
 
 <body>
-
+    <div class="modal sucess hidden">
+        <button class="close">Fechar</button>
+        <div class="box-msg">
+            <img src="./assets/images/check.png" alt="sucess">
+            <h3 class="mensageInfo">Atualizado com sucesso!</h3>
+        </div>
+    </div>
+    <div class="modal addi hidden">
+        <button class="close">Fechar</button>
+        <div class="box-msg">
+            <img src="./assets/images/1200px-Error.svg.png" alt="error">
+            <h3 class="mensageInfo">Error! por favor preencha todos os campos</h3>
+        </div>
+    </div>
+    <div class="modal Deletar hidden">
+        <button class="close">Fechar</button>
+        <div class="box-msg">
+            <img src="./assets/images/1200px-Error.svg.png" alt="error">
+            <h3 class="mensageInfo">Error! esse id nao existe</h3>
+        </div>
+    </div>
+    <div class="modal Atualizar hidden">
+        <button class="close">Fechar</button>
+        <div class="box-msg">
+            <img src="./assets/images/1200px-Error.svg.png" alt="error">
+            <h3 class="mensageInfo">Error! Id ou campo invalido</h3>
+        </div>
+    </div>
     <header>
         <a href="index.html"><img id="logo" src="./assets/images/image.png" alt="logo"></a>
     </header>
     <main>
-        <form action="">
+        <form>
             <label class="title" for="products">Escolha qual acao quer tomar</label>
             <select name="products" id="selectProducts">
                 <option value="add">Adicionar</option>
