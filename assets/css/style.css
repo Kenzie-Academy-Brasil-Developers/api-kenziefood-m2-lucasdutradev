@@ -1,0 +1,520 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+header #logo{
+    margin-left: 10px;
+}
+
+main{
+    padding-left:0;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.activeFilter{
+    border: 2px solid #212529 !important;
+}
+
+#carousel {
+    margin-left:20px;
+    overflow-x: scroll;
+}
+
+#logo {
+    width: 123px;
+    margin-top: 34px;
+}
+
+#search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    max-width: 343px;
+    border: none;
+    border-radius: 25px;
+    background-color: #F8F9FA;
+    height: 54px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+#inputSearch {
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    height: 80%;
+    background-color: #F8F9FA;
+    
+}
+#clickSearch {
+    width: 44px;
+    height: 44px;
+    background-color: #FFE9EE;
+    border: none;
+    border-radius: 50px;
+    margin-right: 6px;
+}
+
+#clickSearch img {
+    width: 16px;
+}
+
+#filterButtons {
+    display: flex;
+    width: fit-content;
+    gap: 5px;
+}
+
+
+.filters {
+    color: #212529;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    padding-left: 15px;
+    display: flex;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 13px;
+    align-items: center;
+}
+
+#all {
+    width: 72px;
+    background-color: #F8F9FA;
+}
+
+#bakery{
+    width: 140px;
+    height: 40px;
+    background-color: #fff7f4
+}
+
+#fruits {
+    width: 107px;
+    background-color: #FFE4EA;
+}
+
+#drinks {
+    width: 115px;
+    background-color: #F3EEF5;
+}
+
+.imgFilters {
+    width: 18px;
+}
+
+
+.information {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.information h2 {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    font-family: 'Poppins', sans-serif; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;   
+}
+
+
+.description {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+.imgAddCart {
+    background-color: transparent;
+    border: none;
+}
+
+.imgAddCart img{
+    width: 35px;
+}
+
+
+#priceBuy {
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#showcaseList {
+    display: flex;
+    gap: 25px;
+    padding: 20px 0px 20px;
+    align-content: space-between;
+}
+
+#showcaseList li {
+    width: 300px;
+}
+
+
+.imgshowase {
+    box-sizing: border-box;
+    width: 300px;
+    height: 200px;
+    border: 3px solid #FFE9EE;
+    border-radius:8px;
+}
+
+.spanShowase {
+    position: relative;
+    bottom: 20px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    height: 30px;
+    padding: 0 15px;
+    gap: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;    
+    font-weight: 550;
+    background-color: #FFE4EA;
+}
+
+.Panificadora{
+    width: 120px;
+}
+
+.Frutas{
+    width: 75px;
+}
+
+.Bebidas{
+    width: 80px;
+}
+
+.spanShowase img {
+    width: 18px;
+    margin-right: 9px;
+}
+
+.price{
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #212529;
+    font-weight: bold;
+}
+
+#titleCart {
+    background-color: #FF2253;
+    color: #FFFFFF;
+    width: 300px;
+    max-width: 343px;
+    font-family: 'Poppins', sans-serif;
+    height: 60px;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    margin-top: 37px;
+}
+
+#titleCart img {
+    width: 15px;
+    margin: 21px;
+}
+
+.emptyCart {
+    max-width: 343px;
+    height: 432px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyCart img {
+    width: 56px;
+    margin-bottom: 16px;
+}
+
+.emptyCart h3 {
+    font-family: 'Poppins' sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #868E96;
+}
+
+.emptyCart p {
+    font-family: 'Poppins' sans-serif;
+    font-size: 13px;
+    margin-bottom: 16px;
+    color: #868E96;
+    width: 180px;
+    text-align: center;
+}
+
+.products--card {
+    width: 280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.img--card {
+    width: 75px;
+    height: 75px;
+    margin: 18px 13px 23px 10px; 
+    border-radius: 8px;   
+}
+
+
+.imgRemoveCart {
+    background-color: transparent;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-top: 18px;
+}
+
+.imgRemoveCart img{
+    width: 26px;
+    height: 26px;
+}
+
+#shoppingCart {
+    margin-inline: auto;
+    width: 300px;
+}
+
+#shoppingCart ul{
+    width: 300px;
+    height: 436px;
+    overflow-y: auto;
+}
+
+.info {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.info h2 {
+    width: 160px;
+    font-size: 14px;
+    font-weight: bold;
+    height: 22px;
+    line-height: 20px;
+    height: 22px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info span{
+    color: #868E96;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.price--card{
+    color: #212529;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#quantityProducts {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    height: 38px;
+    background-color: #F8F9FA;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#totalPrice {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    height: 38px;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#totalPrice p, span{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Poppins';
+}
+
+#quantityProducts p, span{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Poppins';
+}
+
+@media(min-width: 700px){
+    header {
+        display: flex;
+        border-bottom: 1px solid #fff;
+        justify-content: space-between;
+        padding-left: 25px;
+        align-items: center;
+    }
+    main {
+        width: 80vw;
+        padding-top: 42px;
+    }
+
+    #logo {
+        margin-top: auto;
+    }
+
+    #carousel {
+        max-width:900px;
+        overflow: scroll;
+    }
+
+
+    #filterButtons {
+        gap: 30px;
+    }
+
+}
+
+@media(min-width: 900px) and (max-width: 1500px){
+    header {
+        width: 90vw;
+    }
+    main {
+        display: flex;
+        width: 100%;
+    }
+    #carousel{
+        overflow: visible;
+    }
+
+    #showcaseList {
+        flex-wrap: wrap;
+        width: 60vw;
+        justify-content: space-around;
+    }
+    #showcaseList ul {
+        width: 400px;
+        margin-right: 26px;
+    }
+
+    #showcaseList li {
+        width: 200px;
+    }
+
+    .imgshowase {
+        width: 200px;
+        height: 150px;
+    }
+
+    #titleCart {
+        margin-top: 0px;
+    }
+
+    #filterButtons {
+        width: 60vw;
+        gap: 12px;
+    }
+
+    .information {
+        width: 200px;
+    }
+
+    .information h2{
+        height: 25px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #titleCart {
+        width: 30vw;
+    }
+
+    .emptyCart {
+        width: 25vw;
+    }
+
+    #totalPrice{
+        width: 25vw;
+    }
+
+    #quantityProducts{
+        width: 25vw;
+    }
+
+    #shoppingCart ul{
+        width: 34vw;
+    }
+
+    .products--card{
+        width: 23vw;
+    }
+}
+
+@media(min-width: 1501px) {
+    header {
+        width: 70vw;
+        max-width: 1500px;
+        margin-inline: auto;
+    }
+    #carousel{
+        width: fit-content;
+        overflow: visible;
+    }
+    main {
+        display: flex;
+        gap: 300px;
+        width: 100%;
+        justify-content: space-evenly;
+        background-color: rgba(230, 230, 230, 0.158);
+    }
+
+    div#filterButtons{
+        margin-left: 100px;
+    }
+
+    #showcaseList {
+        flex-wrap: wrap;
+        width: 60vw;
+        justify-content: space-around;
+        max-width: 1100px;
+        margin-left:80px;
+    }
+
+
+}
