@@ -45,7 +45,7 @@ class CreateElementsCards {
     
     static
         async add(){
-                let data = await RequestProducts.getProducts()
+                let data = await RequestProducts.getMyProducts()
                 console.log(data)
                 console.log(this.datasOrder)
                 console.log(this.productsInCard)
