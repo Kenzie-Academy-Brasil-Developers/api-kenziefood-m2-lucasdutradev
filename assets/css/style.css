@@ -1,9 +1,11 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family: 'Poppins', sans-serif; 
 }
 
 .admin{
+    display: none;
     position: fixed;
     top: 85vh;
     left: 35px;
@@ -69,18 +71,26 @@ button:hover{
 
 #inputSearch {
     border: none;
-    border-radius: 20px;
+    border-radius: 30px;
     padding-left: 15px;
-    height: 80%;
+    width: 110%;
+    height: 100%;
     background-color: #F8F9FA;
     
 }
+
+/* textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+} */
+
 #clickSearch {
+    margin-left: -50px;
     width: 44px;
     height: 44px;
     background-color: #FFE9EE;
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
     margin-right: 6px;
 }
 
@@ -148,7 +158,6 @@ button:hover{
     font-size: 16px;
     font-weight: 700;
     line-height: 26px;
-    font-family: 'Poppins', sans-serif; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;   
@@ -160,7 +169,6 @@ button:hover{
     line-height: 16px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.5);
-    font-family: 'Poppins', sans-serif;
 }
 
 .imgAddCart {
@@ -198,6 +206,11 @@ button:hover{
     height: 200px;
     border: 3px solid #FFE9EE;
     border-radius:8px;
+    transition: 0.3s;
+}
+
+#showcaseList li:hover .imgshowase {
+    border: 3px solid #FF2253;;
 }
 
 .spanShowase {
@@ -211,7 +224,6 @@ button:hover{
     height: 30px;
     padding: 0 15px;
     gap: 4px;
-    font-family: 'Poppins', sans-serif;
     font-size: 12px;    
     font-weight: 550;
     background-color: #FFE4EA;
@@ -235,7 +247,6 @@ button:hover{
 }
 
 .price{
-    font-family: 'Poppins', sans-serif;
     font-size: 12px;
     color: #212529;
     font-weight: bold;
@@ -246,7 +257,6 @@ button:hover{
     color: #FFFFFF;
     width: 300px;
     max-width: 343px;
-    font-family: 'Poppins', sans-serif;
     height: 60px;
     border-radius: 15px 15px 0 0;
     margin-bottom: 6px;
@@ -275,7 +285,6 @@ button:hover{
 }
 
 .emptyCart h3 {
-    font-family: 'Poppins' sans-serif;
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 16px;
@@ -283,7 +292,6 @@ button:hover{
 }
 
 .emptyCart p {
-    font-family: 'Poppins' sans-serif;
     font-size: 13px;
     margin-bottom: 16px;
     color: #868E96;
@@ -323,6 +331,7 @@ button:hover{
 }
 
 #shoppingCart {
+    position: sticky;
     margin-inline: auto;
     width: 300px;
 }
@@ -431,6 +440,7 @@ button:hover{
 }
 
 @media(min-width: 900px) and (max-width: 1500px){
+
     header {
         width: 90vw;
     }
@@ -506,6 +516,9 @@ button:hover{
 }
 
 @media(min-width: 1501px) {
+    .admin{
+        display: block;
+    }
     header {
         width: 70vw;
         max-width: 1500px;

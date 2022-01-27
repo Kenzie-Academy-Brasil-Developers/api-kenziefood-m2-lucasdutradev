@@ -15,7 +15,6 @@ class RequestProducts {
 
     static
         async deletMyProducts(id) {
-        console.log(id)
         const response = await fetch(`https://kenzie-food-api.herokuapp.com/my/product/${id}`, {
             method: 'DELETE',
             headers: {"Content-Type": "application/json", Authorization: "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImlhdCI6MTY0MzExODAwMiwiZXhwIjoxNjQzOTgyMDAyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.eJRSB14eZyAje7x5c6W7u9UXJdr-_mFCVoGALXzwyJI" },
