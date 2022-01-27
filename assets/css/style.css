@@ -3,6 +3,25 @@ body {
     flex-direction: column;
 }
 
+.admin{
+    position: fixed;
+    top: 85vh;
+    left: 35px;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+}
+
+.admin a img{
+    transition: 0.5s;
+    width: 80px;
+}
+
+.admin a img:hover{
+    background-color: #FF4755;
+    border-radius: 100%;
+}
+
 header {
     margin-bottom: 16px;
     padding-left: 20px;
